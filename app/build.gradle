@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation "com.android.support:design:28.0.0"
     kapt 'com.google.dagger:dagger-android-processor:2.15'
     kapt 'com.google.dagger:dagger-compiler:2.27'
     implementation 'androidx.room:room-runtime:2.2.5'

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="title_lent">События</string>
-    <string name="title_profile">Профиль</string>
-    <string name="title_statistic">Статистика</string>
-    <string name="field_search">Найти..</string>
-</resources>

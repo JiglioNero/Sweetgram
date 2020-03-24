@@ -9,7 +9,8 @@
         android:id="@+id/navigation_home"
         android:name="com.example.sweetgram.ui.event_lenta.EventLentFragment"
         android:label="@string/title_lent"
-        tools:layout="@layout/fragment_event_lent" />
+        tools:layout="@layout/fragment_event_lent"
+        />
 
     <fragment
         android:id="@+id/navigation_dashboard"
