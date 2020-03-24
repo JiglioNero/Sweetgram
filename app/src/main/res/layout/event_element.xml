@@ -4,18 +4,16 @@
     <data>
         <variable
             name="event"
-            type="com.example.sweetgram.entitys.DatingEvent" />
+            type="com.example.sweetgram.data.entitys.DatingEvent" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
             android:elevation="4dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
@@ -95,9 +93,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="11dp"
                     android:layout_marginEnd="8dp"
-                    app:iconId="@{event.eventImageId}"
                     app:cardBackgroundColor="@android:color/transparent"
                     app:cardCornerRadius="10dp"
+                    app:iconId="@{event.eventImageId}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/date" />

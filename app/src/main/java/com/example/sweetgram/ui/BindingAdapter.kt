@@ -1,6 +1,6 @@
 package com.example.sweetgram.ui
 
-import android.widget.ImageView
+import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingComponent
 
@@ -10,12 +10,13 @@ object BindingAdapter: DataBindingComponent {
         R.string.base_weather_url
     )+"img/wn/"*/
 
-    override fun getBindingAdapter(): com.example.sweetgram.ui.BindingAdapter {
+    fun getBindingAdapter(): com.example.sweetgram.ui.BindingAdapter {
         return this
     }
 
+    @JvmStatic
     @BindingAdapter(value = ["app:iconId"], requireAll = true)
-    fun loadImage(view: ImageView, iconId: String?, size: Int?) {
+    fun loadImage(view: View, iconId: String?) {
         /*if(iconId!=null && !iconId.isBlank() && size!=null && size > 0) {
             val sizeStr = if (size == 1){
                 ""

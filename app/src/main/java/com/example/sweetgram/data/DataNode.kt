@@ -1,4 +1,4 @@
 package com.example.sweetgram.data
 
-class DataNode {
+object DataNode {
 }

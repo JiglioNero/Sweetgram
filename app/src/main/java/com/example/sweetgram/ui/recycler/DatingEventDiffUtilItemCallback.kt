@@ -1,7 +1,7 @@
 package jiglionero.android.app.putonpompom.view.recycler
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.sweetgram.entitys.DatingEvent
+import com.example.sweetgram.data.entitys.DatingEvent
 
 
 class DatingEventDiffUtilItemCallback : DiffUtil.ItemCallback<DatingEvent>() {

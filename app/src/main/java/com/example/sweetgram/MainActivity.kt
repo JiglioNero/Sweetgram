@@ -6,10 +6,16 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.sweetgram.di.DaggerMainComponent
+import com.example.sweetgram.di.MainComponent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-object MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+    lateinit var injector: MainComponent
 
+    companion object{
+        lateinit var instance: MainActivity
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +29,10 @@ object MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        instance = this
+
+        injector = DaggerMainComponent.create()
 
     }
 

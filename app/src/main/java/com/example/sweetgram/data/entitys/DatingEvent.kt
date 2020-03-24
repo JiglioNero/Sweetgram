@@ -1,4 +1,4 @@
-package com.example.sweetgram.entitys
+package com.example.sweetgram.data.entitys
 
 import java.text.SimpleDateFormat
 import java.util.*
