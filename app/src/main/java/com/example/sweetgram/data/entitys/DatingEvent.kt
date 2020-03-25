@@ -1,20 +1,32 @@
 package com.example.sweetgram.data.entitys
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.text.SimpleDateFormat
 import java.util.*
 
+@Entity
 data class DatingEvent (
-    val location: String =  "",
-    val date: Date = Date(),
-    val userIconId: String = "",
-    val eventText: String = "",
-    val eventType: EventType = EventType.Date,
-    val eventImageId: String = ""
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    var location: String =  "",
+    var dt: Long = Date().time,
+    var userId: String = "",
+    var eventText: String = "",
+    var eventType: String = EventType.Date.name,
+    var eventImageId: String = ""
 ){
-    fun getFormattedDate(): String{
-        return dateFormatter.format(date)
+    var dt_txt = getFormattedDate()
+
+    fun getUserIconId(): String{
+        return ""
     }
+
+    fun getFormattedDate(): String{
+        return dateFormatter.format(Date(dt))
+    }
+
     companion object {
-        val dateFormatter = SimpleDateFormat("dd MMMM yyyy")
+        val dateFormatter = SimpleDateFormat("MMMM dd ", Locale.ENGLISH)
     }
 }

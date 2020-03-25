@@ -3,24 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/event_lent">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/event_lent"
         android:name="com.example.sweetgram.ui.event_lenta.EventLentFragment"
         android:label="@string/title_lent"
         tools:layout="@layout/fragment_event_lent"
-        />
+        >
+        <action
+            android:id="@+id/action_navigation_home_to_eventRedactorFragment"
+            app:destination="@id/add_event"
+            app:launchSingleTop="true" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/profile"
         android:name="com.example.sweetgram.ui.dashboard.DashboardFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/statistic"
         android:name="com.example.sweetgram.ui.notifications.NotificationsFragment"
         android:label="@string/title_statistic"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/add_event"
+        android:name="com.example.sweetgram.ui.event_redactor.EventRedactorFragment"
+        android:label="EventRedactorFragment" >
+        <action
+            android:id="@+id/action_add_event_to_event_lent"
+            app:destination="@id/event_lent" />
+    </fragment>
 </navigation>

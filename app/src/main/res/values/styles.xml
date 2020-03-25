@@ -20,6 +20,7 @@
 
     <style name="LocationText" parent="OtherText">
         <item name="android:textStyle">italic</item>
+        <item name="android:hint">@string/location_hint</item>
     </style>
 
     <style name="AppAutoTextCompleteStyle" parent="Base.V7.Widget.AppCompat.AutoCompleteTextView">
@@ -32,11 +33,24 @@
         <item name="searchIcon">@drawable/ic_search</item>
         <item name="height">50dp</item>
         <item name="android:queryBackground">@null</item>
-        <item name="android:queryHint">@string/field_search</item>
+        <item name="android:queryHint">@string/search_hint</item>
         <item name="background">@drawable/border_10</item>
         <item name="backgroundTint">@color/white</item>
         <item name="commitIcon">@drawable/ic_search</item>
         <item name="iconifiedByDefault">false</item>
+    </style>
+
+    <style name="MenuInactive">
+        <item name="android:itemBackground">@drawable/ic_border</item>
+    </style>
+
+    <style name="MenuActive">
+        <item name="android:itemBackground">@drawable/ic_border_active</item>
+    </style>
+
+    <style name="Spinner">
+        <item name="overlapAnchor">true</item>
+        <item name="background">@drawable/ic_drop_down</item>
     </style>
 
 </resources>

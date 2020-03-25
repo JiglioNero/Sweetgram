@@ -1,4 +1,4 @@
-package com.example.sweetgram.ui.recycler
+package com.example.sweetgram.ui.event_lenta.recycler
 
 import android.view.LayoutInflater
 import android.view.View

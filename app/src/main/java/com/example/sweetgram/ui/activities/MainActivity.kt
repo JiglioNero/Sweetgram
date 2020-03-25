@@ -1,19 +1,13 @@
-package com.example.sweetgram
+package com.example.sweetgram.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.sweetgram.di.DaggerMainComponent
-import com.example.sweetgram.di.MainComponent
+import com.example.sweetgram.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    lateinit var injector: MainComponent
-
-    companion object{
-        lateinit var instance: MainActivity
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +18,6 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         navView.setupWithNavController(navController)
-
-        instance = this
-
-        injector = DaggerMainComponent.create()
 
     }
 

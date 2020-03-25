@@ -1,13 +1,25 @@
 package jiglionero.android.app.putonpompom.di
 
+import android.content.Context
+import androidx.room.Room
+import com.example.sweetgram.data.DataNode
+import com.example.sweetgram.data.Database
 import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class DataModule{
-    /*@Singleton
+    @Singleton
     @Provides
-    fun getDatabase(context: Context): WeatherDatabase{
-        return Room.databaseBuilder(context, WeatherDatabase::class.java, "WeatherDatabase")
+    fun getDatabase(context: Context): Database {
+        return Room.databaseBuilder(context, Database::class.java, "Sweetgram-Database")
             .build()
-    }*/
+    }
+
+    @Singleton
+    @Provides
+    fun getDataNode(database: Database): DataNode {
+        return DataNode(database)
+    }
 }

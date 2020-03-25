@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.sweetgram.data.entitys.DatingEvent
-import com.example.sweetgram.ui.recycler.DatingEventAdapter
+import com.example.sweetgram.ui.event_lenta.recycler.DatingEventAdapter
 import dagger.Module
 import dagger.Provides
 import jiglionero.android.app.putonpompom.view.recycler.DatingEventDiffUtilItemCallback

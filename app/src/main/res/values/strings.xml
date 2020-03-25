@@ -3,5 +3,8 @@
     <string name="title_lent">Events</string>
     <string name="title_profile">Profile</string>
     <string name="title_statistic">Statistic</string>
-    <string name="field_search">Search..</string>
+    <string name="search_hint">Search...</string>
+    <string name="empty_message">Add a moment there</string>
+    <string name="moment_hint">Moment...</string>
+    <string name="location_hint">Input your location</string>
 </resources>
