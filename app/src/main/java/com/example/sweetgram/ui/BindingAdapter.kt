@@ -1,8 +1,16 @@
 package com.example.sweetgram.ui
 
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingComponent
+import com.squareup.picasso.Picasso
+import com.squareup.picasso.Target
+import java.io.File
 
 object BindingAdapter: DataBindingComponent {
 
@@ -18,18 +26,30 @@ object BindingAdapter: DataBindingComponent {
     @BindingAdapter(value = ["app:iconId"], requireAll = true)
     fun loadImage(view: View, iconId: String?) {
         //todo set card h and w to 40dp
-        /*if(iconId!=null && !iconId.isBlank() && size!=null && size > 0) {
-            val sizeStr = if (size == 1){
-                ""
+        if(!iconId.isNullOrBlank()) {
+            Log.i("Picasso", "Load file: $iconId")
+            when (view){
+                is ImageView ->  Picasso.get().load(iconId).into(view)
+                else -> {
+                    view.tag = object: Target{
+                        override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+                            Log.e("Picasso", "placeHolderDrawable = $placeHolderDrawable")
+                        }
+
+                        override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                            Log.e("Picasso", "onBitmapFailed = $errorDrawable")
+                            e?.printStackTrace()
+                        }
+
+                        override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                            Log.e("Picasso", "onBitmapLoaded = $bitmap")
+                            view.background = BitmapDrawable(bitmap)
+                        }
+                    }
+                    Picasso.get().load(File(iconId)).into(view.tag as Target)
+                }
             }
-            else{
-                "@$size" + "x"
-            }
-            val uri = Uri.parse("${BASE_URL}$iconId$sizeStr.png")
-            Log.i("Picasso", "Load file: " + "${BASE_URL}$iconId$sizeStr.png")
-            //Picasso.get().isLoggingEnabled = true
-            Picasso.get().load(uri).into(view)
-        }*/
+        }
     }
 
     @JvmStatic

@@ -55,14 +55,18 @@ class EventLentFragment : Fragment() {
             SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let {
-                    eventLentViewModel.filter.value = it
+                    eventLentViewModel.lentaDataNode.filter.value = it
                     return true
                 }
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                return true
+                newText?.let {
+                    eventLentViewModel.lentaDataNode.filter.value = it
+                    return true
+                }
+                return false
             }
 
         })

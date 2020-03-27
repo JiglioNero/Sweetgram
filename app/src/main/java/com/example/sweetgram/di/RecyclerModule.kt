@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.sweetgram.data.entitys.DatingEvent
+import com.example.sweetgram.ui.event_lenta.LentaDataNode
 import com.example.sweetgram.ui.event_lenta.recycler.DatingEventAdapter
 import dagger.Module
 import dagger.Provides
@@ -15,8 +16,8 @@ import java.util.concurrent.Executors
 class RecyclerModule{
 
     @Provides
-    fun getDataSourceFactory(): DatingEventSourceFactory {
-        return DatingEventSourceFactory()
+    fun getDataSourceFactory(lentaDataNode: LentaDataNode): DatingEventSourceFactory {
+        return DatingEventSourceFactory(lentaDataNode)
     }
 
     @Provides

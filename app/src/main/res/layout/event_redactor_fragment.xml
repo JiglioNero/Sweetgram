@@ -45,17 +45,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageView"
                     app:layout_constraintVertical_bias="0.0">
 
-                    <ImageView
-                        android:id="@+id/load_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="8dp"
-                        android:src="@drawable/ic_image"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:need_to_show="@{redactVM.datingEventField.eventImageId.length() == 0}" />
-
                     <androidx.cardview.widget.CardView
                         android:id="@+id/event_image"
                         android:layout_width="0dp"
@@ -73,8 +62,8 @@
                     <EditText
                         android:id="@+id/event_text"
                         style="@style/OtherText"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="316dp"
+                        android:layout_height="15dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
@@ -92,6 +81,17 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/event_image"
                         app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageView
+                        android:id="@+id/load_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:need_to_show="@{redactVM.datingEventField.eventImageId.length() == 0}" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Spinner

@@ -9,6 +9,12 @@ interface DatingEventDao {
     @Query("SELECT * FROM DatingEvent ORDER BY DatingEvent.dt DESC")
     fun getAll(): LiveData<List<DatingEvent>>
 
+    @Query("SELECT * FROM DatingEvent WHERE DatingEvent.id is :id")
+    fun getById(id: Long): DatingEvent
+
+    @Query("DELETE FROM DatingEvent WHERE DatingEvent.id is :id")
+    fun deleteById(id: Long)
+
     @Query(
         "SELECT * " +
                 "FROM DatingEvent " +

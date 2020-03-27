@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sweetgram.data.entitys.DatingEvent
 import com.example.sweetgram.databinding.EventElementBindingImpl
+import com.example.sweetgram.ui.event_lenta.EventLentViewModel
 
 class DatingEventAdapter(diffUtilCallback: DiffUtil.ItemCallback<DatingEvent>) : PagedListAdapter<DatingEvent, DatingEventAdapter.DateEventHolder>(diffUtilCallback) {
+    lateinit var eventLentViewModel: EventLentViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DateEventHolder {
         val binding = DataBindingUtil.inflate<EventElementBindingImpl>(
@@ -18,6 +20,7 @@ class DatingEventAdapter(diffUtilCallback: DiffUtil.ItemCallback<DatingEvent>) :
             com.example.sweetgram.R.layout.event_element,
             parent,
             false)
+
         return DateEventHolder(binding.root, binding)
     }
 
@@ -29,7 +32,8 @@ class DatingEventAdapter(diffUtilCallback: DiffUtil.ItemCallback<DatingEvent>) :
     inner class DateEventHolder(itemView: View, val binding: EventElementBindingImpl) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: DatingEvent) {
-                binding.event = event
+            binding.event = event
+            binding.lentaVM = eventLentViewModel
         }
     }
 

@@ -29,4 +29,13 @@ data class DatingEvent (
     companion object {
         val dateFormatter = SimpleDateFormat("MMMM dd ", Locale.ENGLISH)
     }
+
+    override fun toString(): String {
+        val sb = StringBuilder()
+        this.javaClass.declaredFields.forEach {
+            it.isAccessible = true
+            sb.append("${it.type} ${it.name} = ${it.get(this)} \n")
+        }
+        return sb.toString()
+    }
 }
