@@ -12,9 +12,13 @@ class DataNode(
 
     fun getDatingEvents(filter: String? = ""): LiveData<List<DatingEvent>>{
         return if (filter.isNullOrBlank())
-            database.getAllDatingEvents()
+                database.getAllDatingEvents()
         else
             database.getDatingEventsWithFilter(filter)
+    }
+
+    fun getDatingEventById(id: Long): DatingEvent{
+        return database.getDatingEventById(id)
     }
 
     fun deleteDatingEvent(id: Long){

@@ -28,6 +28,11 @@ abstract class Database: RoomDatabase()  {
         return datingEventDao().getAllWithFilter("%$filter%")
     }
 
+    fun getDatingEventById(id: Long): DatingEvent {
+        Log.e("Database", "get with id = $id" )
+        return datingEventDao().getById(id)
+    }
+
     fun deleteDatingEvent(id: Long) {
         Log.e("Database", "delete with id = $id" )
         datingEventDao().deleteById(id)

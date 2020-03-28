@@ -25,11 +25,10 @@ object BindingAdapter: DataBindingComponent {
     @JvmStatic
     @BindingAdapter(value = ["app:iconId"], requireAll = true)
     fun loadImage(view: View, iconId: String?) {
-        //todo set card h and w to 40dp
+        Log.i("Picasso", "Load file: $iconId")
         if(!iconId.isNullOrBlank()) {
-            Log.i("Picasso", "Load file: $iconId")
             when (view){
-                is ImageView ->  Picasso.get().load(iconId).into(view)
+                is ImageView ->  Picasso.get().load(File(iconId)).into(view)
                 else -> {
                     view.tag = object: Target{
                         override fun onPrepareLoad(placeHolderDrawable: Drawable?) {

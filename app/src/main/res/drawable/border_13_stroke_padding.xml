@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:right="@dimen/progressbar_margin" android:top="@dimen/progressbar_margin" android:left="@dimen/progressbar_margin" android:bottom="@dimen/progressbar_margin">
+        <shape>
+            <corners android:radius="13dp"/>
+            <stroke android:color="#32AD8DE2" android:width="1dp"/>
+        </shape>
+    </item>
+</layer-list>

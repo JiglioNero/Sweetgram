@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScaleableProgressBarWithAim">
+        <attr name="spbwa_aim_drawable" format="integer">@drawable/ic_check_black_24dp</attr>
+        <attr name="spbwa_reached_aim_drawable" format="integer">@drawable/ic_check_black_24dp</attr>
+        <attr name="spbwa_aim_drawable_tint" format="color"/>
+        <attr name="spbwa_reached_aim_drawable_tint" format="color"/>
+        <attr name="spbwa_wall_drawable" format="integer"/>
+        <attr name="spbwa_brake_the_wall" format="boolean">true</attr>
+    </declare-styleable>
+</resources>

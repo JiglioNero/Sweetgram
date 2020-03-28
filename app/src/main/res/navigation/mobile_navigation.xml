@@ -19,15 +19,15 @@
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.sweetgram.ui.dashboard.DashboardFragment"
+        android:name="com.example.sweetgram.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/statistic"
-        android:name="com.example.sweetgram.ui.notifications.NotificationsFragment"
+        android:name="com.example.sweetgram.ui.statistic.StatisticFragment"
         android:label="@string/title_statistic"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_statistic" />
     <fragment
         android:id="@+id/add_event"
         android:name="com.example.sweetgram.ui.event_redactor.EventRedactorFragment"

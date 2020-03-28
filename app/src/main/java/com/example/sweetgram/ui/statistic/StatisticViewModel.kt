@@ -1,10 +1,10 @@
-package com.example.sweetgram.ui.notifications
+package com.example.sweetgram.ui.statistic
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class StatisticViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"

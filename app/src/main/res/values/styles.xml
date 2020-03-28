@@ -52,5 +52,20 @@
         <item name="overlapAnchor">true</item>
         <item name="background">@drawable/ic_drop_down</item>
     </style>
+    
+    <style name="WhiteText" parent="OtherText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="font">@font/questrial</item>
+    </style>
+    
+    <style name="SweetProgressBarHorisontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/sweet_progress_bar</item>
+        <item name="background">@drawable/border_13_stroke_padding</item>
+    </style>
 
 </resources>
