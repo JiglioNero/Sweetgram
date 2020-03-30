@@ -7,6 +7,13 @@ class DataNode(
     private val database: Database
 ) {
 
+    fun getDatingEventsByUserId(id: Long, filter: String?): LiveData<List<DatingEvent>>{
+        return if (filter.isNullOrBlank())
+            database.datingEventDao().getByUserId(id)
+        else
+            database.datingEventDao().getWithFilterByUserId(id, database.filterTransform(filter))
+    }
+
     fun getAllRelationship(): List<Relationship>{
         return database.relationshipDao().getAll()
     }
@@ -54,7 +61,7 @@ class DataNode(
         return if (filter.isNullOrBlank())
                 database.datingEventDao().getAll()
         else
-            database.datingEventDao().getAllWithFilter(filter)
+            database.datingEventDao().getAllWithFilter(database.filterTransform(filter))
     }
 
     fun getDatingEventById(id: Long): DatingEvent{

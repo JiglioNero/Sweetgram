@@ -1,6 +1,8 @@
 package com.example.sweetgram.data.entitys
 
-class LoverCredentials(val username: String){
+import java.io.Serializable
+
+class LoverCredentials(val username: String): Serializable{
     constructor(lover: Lover) : this(lover.username) {
     }
 

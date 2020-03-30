@@ -11,7 +11,7 @@ data class DatingEvent (
     val id: Long = 0,
     var location: String =  "",
     var dt: Long = Date().time,
-    var userId: String = "",
+    var userId: Long = 0,
     var eventText: String = "",
     var eventType: String = "Date",
     var eventImageId: String = ""

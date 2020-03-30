@@ -1,6 +1,7 @@
 package com.example.sweetgram.di
 
 import com.example.sweetgram.SweetgramApplication
+import com.example.sweetgram.ui.activities.MainActivity
 import com.example.sweetgram.ui.activities.login.LoginActivity
 import com.example.sweetgram.ui.activities.login.LoginViewModel
 import com.example.sweetgram.ui.event_lenta.EventLentViewModel
@@ -24,4 +25,5 @@ interface MainComponent {
     fun inject(obj: EventRedactorViewModel)
     fun inject(obj: LoginViewModel)
     fun inject(obj: LoginActivity)
+    fun inject(obj: MainActivity)
 }

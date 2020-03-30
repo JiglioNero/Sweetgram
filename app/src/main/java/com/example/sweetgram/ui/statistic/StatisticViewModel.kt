@@ -5,6 +5,7 @@ import com.example.sweetgram.SweetgramApplication
 import com.example.sweetgram.data.DataNode
 import com.example.sweetgram.data.entitys.EventType
 import com.example.sweetgram.data.entitys.Relationship
+import com.example.sweetgram.ui.activities.MainActivity
 import com.example.sweetgram.ui.statistic.recycler.StatisticItemAdapter
 import java.util.*
 import javax.inject.Inject
@@ -15,13 +16,15 @@ class StatisticViewModel : ViewModel() {
     lateinit var dataNode: DataNode
     var relationship: Relationship
 
+    var userId = MainActivity.user.id
+
     var eventTypes: List<EventType>
     var adapter = StatisticItemAdapter()
 
     init{
         SweetgramApplication.instance.injector.inject(this)
         eventTypes = dataNode.getAllEventTypes()
-        relationship = dataNode.getAllRelationship()[0]
+        relationship = dataNode.getRelationshipByLoversIds(userId)!!
     }
 
     fun getCountOfDaysBeforeAnniversary(): Int{

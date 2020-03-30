@@ -36,7 +36,7 @@ class EventLentViewModel : ViewModel() {
 
     fun redactEventById(id: Long){
         val bundleData = Bundle()
-        bundleData.putLong("dating_event_id", id)
+        bundleData.putSerializable("dating_event_id", id)
         findNavController(fragment).navigate(R.id.action_navigation_home_to_eventRedactorFragment, bundleData)
     }
 

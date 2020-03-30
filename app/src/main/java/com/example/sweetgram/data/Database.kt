@@ -17,4 +17,8 @@ abstract class Database: RoomDatabase()  {
     abstract fun eventTypeDao(): EventTypeDao
     abstract fun loverDao(): LoverDao
     abstract fun relationshipDao(): RelationshipDao
+
+    fun filterTransform(filter: String): String{
+        return "%$filter%"
+    }
 }

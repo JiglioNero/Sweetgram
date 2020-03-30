@@ -5,9 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.sweetgram.R
+import com.example.sweetgram.SweetgramApplication
+import com.example.sweetgram.data.DataNode
+import com.example.sweetgram.data.entitys.Lover
+import com.example.sweetgram.data.entitys.LoverCredentials
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        lateinit var user: Lover
+    }
+
+    @Inject lateinit var dataNode: DataNode
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         navView.setupWithNavController(navController)
+
+        SweetgramApplication.instance.injector.inject(this)
+
+        val creds = intent.getSerializableExtra("credentials") as LoverCredentials
+        user = dataNode.getLoverByCredentials(creds)!!
 
     }
 

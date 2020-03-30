@@ -1,7 +1,11 @@
 package jiglionero.android.app.putonpompom.di
 
+import android.content.ContentValues
 import android.content.Context
+import androidx.room.OnConflictStrategy
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.sweetgram.data.DataNode
 import com.example.sweetgram.data.Database
 import com.example.sweetgram.ui.event_lenta.LentaDataNode
@@ -13,14 +17,14 @@ import javax.inject.Singleton
 class DataModule{
     @Singleton
     @Provides
-    fun getDatabase(context: Context/*, onPreCreateCallback: RoomDatabase.Callback*/): Database {
+    fun getDatabase(context: Context, onPreCreateCallback: RoomDatabase.Callback): Database {
         return Room.databaseBuilder(context, Database::class.java, "Sweetgram-Database")
             .allowMainThreadQueries()
-            /*.addCallback(onPreCreateCallback)*/
+            .addCallback(onPreCreateCallback)
             .build()
     }
 
-   /* @Provides
+    @Provides
     fun getOnCreateDatabaseCallback(): RoomDatabase.Callback{
         return object: RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
@@ -36,7 +40,7 @@ class DataModule{
                     db.insert("EventType", OnConflictStrategy.REPLACE, it)
                 }
 
-                val ids = arrayListOf<Long>()
+                /*val ids = arrayListOf<Long>()
                 val valuesAppUser = arrayListOf<ContentValues>(
                     ContentValues().apply { put("username", "Mikhail") },
                     ContentValues().apply { put("username", "Alesya") }
@@ -54,10 +58,10 @@ class DataModule{
                 )
                 valuesRelationship.forEach {
                     db.insert("Relationship", OnConflictStrategy.ABORT, it)
-                }
+                }*/
             }
         }
-    }*/
+    }
 
     @Singleton
     @Provides

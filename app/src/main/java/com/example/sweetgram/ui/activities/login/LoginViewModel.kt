@@ -1,9 +1,10 @@
 package com.example.sweetgram.ui.activities.login
 
 import android.content.Intent
-import android.util.Log
+import android.widget.Toast
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
+import com.example.sweetgram.R
 import com.example.sweetgram.SweetgramApplication
 import com.example.sweetgram.data.DataNode
 import com.example.sweetgram.data.entitys.Lover
@@ -39,11 +40,12 @@ class LoginViewModel: ViewModel() {
 
         val intent = Intent(loginActivity, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        intent.putExtra("credentials", credentials)
         loginActivity.startActivity(intent)
     }
 
     fun tryToLoginByInput(){
-        Log.d("Login", "tryToLoginByInput")
+        var toast: Toast? = null
         if (
             username.get() != null &&
             loversUsername.get() != null &&
@@ -77,16 +79,34 @@ class LoginViewModel: ViewModel() {
             if (id1 > 0 && id2 > 0 && relationshipId > 0){
                 loginActivity.sharedPreferences.edit().putString("username", cred1.username).apply()
 
+                toast = Toast.makeText(loginActivity,
+                    loginActivity.resources.getString(R.string.login_success_toast), Toast.LENGTH_SHORT
+                )
+                toast.show()
+
                 val intent = Intent(loginActivity, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                intent.putExtra("credentials", cred1)
                 loginActivity.startActivity(intent)
+
             }
             }
             catch (e: Exception){
                 e.printStackTrace()
+                toast = Toast.makeText(loginActivity,
+                    loginActivity.resources.getString(R.string.smth_failed_toast), Toast.LENGTH_SHORT
+                )
+                toast.show()
                 return
             }
         }
-        return
+        else {
+            toast = Toast.makeText(
+                loginActivity,
+                loginActivity.resources.getString(R.string.fill_all_inputs_toast),
+                Toast.LENGTH_SHORT
+            )
+            toast.show()
+        }
     }
 }

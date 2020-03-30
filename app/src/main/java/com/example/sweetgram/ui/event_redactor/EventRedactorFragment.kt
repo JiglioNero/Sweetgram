@@ -19,6 +19,7 @@ import com.example.sweetgram.R
 import com.example.sweetgram.data.entitys.DatingEvent
 import com.example.sweetgram.databinding.FragmentEventRedactorBinding
 import com.example.sweetgram.ui.activities.ImagePickerActivity
+import com.example.sweetgram.ui.activities.MainActivity
 import pl.aprilapps.easyphotopicker.EasyImage
 
 
@@ -55,7 +56,7 @@ class EventRedactorFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(EventRedactorViewModel::class.java)
 
-        var event = DatingEvent()
+        var event = DatingEvent(userId = MainActivity.user.id)
         if (arguments?.containsKey("dating_event_id") != null && arguments?.containsKey("dating_event_id")!!){
             val id = arguments!!.getLong("dating_event_id")
             event = viewModel.dataNode.getDatingEventById(id)

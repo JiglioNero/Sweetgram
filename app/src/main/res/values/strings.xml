@@ -29,4 +29,7 @@
     <string name="username_example">"Rick"</string>
     <string name="date_example">"30.03.2020"</string>
     <string name="config_file_name" translatable="false">config</string>
+    <string name="fill_all_inputs_toast">Please fill all inputs. P.S. names should be longer then 3)</string>
+    <string name="smth_failed_toast">Sorry, something failed</string>
+    <string name="login_success_toast">Login success</string>
 </resources>
