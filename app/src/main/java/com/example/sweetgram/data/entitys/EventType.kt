@@ -1,5 +1,10 @@
 package com.example.sweetgram.data.entitys
 
-enum class EventType {
-    Date, Cinema, Theater, Travel, Surprise
-}
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class EventType(
+    @PrimaryKey
+    val name: String
+)

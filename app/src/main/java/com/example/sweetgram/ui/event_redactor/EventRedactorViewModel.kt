@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.sweetgram.SweetgramApplication
 import com.example.sweetgram.data.DataNode
 import com.example.sweetgram.data.entitys.DatingEvent
+import com.example.sweetgram.data.entitys.EventType
 import javax.inject.Inject
 
 class EventRedactorViewModel : ViewModel() {
@@ -13,7 +14,10 @@ class EventRedactorViewModel : ViewModel() {
 
     val datingEventField =  ObservableField<DatingEvent>()
 
+    var eventTypes: List<EventType>
+
     init {
         SweetgramApplication.instance.injector.inject(this)
+        eventTypes = dataNode.getAllEventTypes()
     }
 }

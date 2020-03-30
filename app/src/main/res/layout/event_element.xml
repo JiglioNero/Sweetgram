@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="10dp"
-                    android:text="@{event.eventType.toString()}"
+                    android:text="@{event.eventType}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,7 +89,7 @@
 
                 <TextView
                     android:id="@+id/date"
-                    style="@style/OtherText"
+                    style="@style/GrayText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -132,7 +132,7 @@
 
                 <TextView
                     android:id="@+id/event_text"
-                    style="@style/OtherText"
+                    style="@style/GrayText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"

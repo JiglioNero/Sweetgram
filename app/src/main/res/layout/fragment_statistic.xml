@@ -1,76 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.statistic.StatisticFragment">
-
-    <ScrollView
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:context=".ui.statistic.StatisticFragment">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-                <androidx.cardview.widget.CardView
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="40dp"
-                    app:cardCornerRadius="10dp"
-                    android:outlineSpotShadowColor="@color/colorShadow"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" >
+                    android:layout_height="wrap_content">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginEnd="40dp"
+                        android:outlineSpotShadowColor="@color/colorShadow"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                        <ProgressBar
-                            android:id="@+id/anniversary_progress"
-                            style="@style/SweetProgressBarHorisontal"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="22dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginEnd="22dp"
-                            android:background="@drawable/border_13_stroke_padding"
-                            android:indeterminate="false"
-                            android:max="365"
-                            android:progress="150"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constaraint_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/days_count"
-                            style="@style/WhiteText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            app:layout_constraintBottom_toBottomOf="@+id/anniversary_progress"
-                            app:layout_constraintEnd_toEndOf="@+id/anniversary_progress"
-                            app:layout_constraintHorizontal_bias="0.15"
-                            app:layout_constraintStart_toStartOf="@+id/anniversary_progress"
-                            app:layout_constraintTop_toTopOf="@+id/anniversary_progress" />
+                            <ProgressBar
+                                android:id="@+id/anniversary_progress"
+                                style="@style/SweetProgressBarHorisontal"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginEnd="22dp"
+                                android:background="@drawable/border_13_stroke_padding"
+                                android:backgroundTint="@color/colorMainBackground"
+                                android:indeterminate="false"
+                                android:max="365"
+                                android:progress="60"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/days_count"
+                                style="@style/WhiteText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="101 days"
+                                app:layout_constraintBottom_toBottomOf="@+id/anniversary_progress"
+                                app:layout_constraintEnd_toEndOf="@+id/anniversary_progress"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="@+id/anniversary_progress"
+                                app:layout_constraintTop_toTopOf="@+id/anniversary_progress" />
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="2dp"
+                                android:layout_height="50dp"
+                                android:layout_marginEnd="50dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/anniversary_progress"
+                                app:layout_constraintEnd_toEndOf="@+id/anniversary_progress"
+                                app:layout_constraintTop_toTopOf="@+id/anniversary_progress"
+                                app:srcCompat="@color/colorAccentLight" />
+
+                            <ImageView
+                                android:id="@+id/inactive_heart"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginEnd="16dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/anniversary_progress"
+                                app:layout_constraintEnd_toEndOf="@+id/anniversary_progress"
+                                app:layout_constraintTop_toTopOf="@+id/anniversary_progress"
+                                app:srcCompat="@drawable/ic_heart" />
+
+                            <ImageView
+                                android:id="@+id/active_heart"
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="1dp"
+                                android:src="@drawable/ic_heart_fire"
+                                android:visibility="invisible"
+                                app:layout_constraintBottom_toBottomOf="@+id/anniversary_progress"
+                                app:layout_constraintEnd_toEndOf="@+id/anniversary_progress"
+                                app:layout_constraintTop_toTopOf="@+id/anniversary_progress"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="0dp"
+                                android:layout_height="2dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/anniversary_progress"
+                                tools:srcCompat="@color/colorMainBackground" />
+
+                            <TextView
+                                android:id="@+id/textView"
+                                style="@style/MiddleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp"
+                                android:text="@string/stat_until_next_anniversary"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="3dp"
+                                android:src="@drawable/ic_checked"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                                app:layout_constraintEnd_toStartOf="@+id/textView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                style="@style/MiddleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:layout_marginEnd="26dp"
+                                android:layout_marginBottom="16dp"
+                                android:text="@string/stat_days"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                            <TextView
+                                android:id="@+id/days_befor_anniversary"
+                                style="@style/TextCounter"
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/border_10_stroke"
+                                android:text="TextView"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="40dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="4dp"
+                        android:outlineSpotShadowColor="@color/colorShadow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginBottom="12dp"
+                                android:src="@drawable/ic_checked"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                style="@style/MiddleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/stat_time_together"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                                app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+                            <Spinner
+                                android:id="@+id/long_spinner"
+                                style="@style/Spinner"
+                                android:layout_width="80dp"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="12dp"
+                                android:background="@drawable/ic_drop_down"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/periods_count"
+                                style="@style/TextCounter"
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/border_10_stroke"
+                                android:text="TextView"
+                                app:layout_constraintBottom_toBottomOf="@+id/long_spinner"
+                                app:layout_constraintEnd_toStartOf="@+id/long_spinner"
+                                app:layout_constraintTop_toTopOf="@+id/long_spinner" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="4dp"
+                        android:outlineSpotShadowColor="@color/colorShadow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Spinner
+                                android:id="@+id/period_spinner"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="21dp"
+                                android:background="@drawable/ic_drop_down"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                style="@style/MiddleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="75dp"
+                                android:text="@string/stat_calculate_by"
+                                app:layout_constraintBottom_toBottomOf="@+id/period_spinner"
+                                app:layout_constraintEnd_toEndOf="@+id/period_spinner"
+                                app:layout_constraintTop_toTopOf="@+id/period_spinner" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/stat_recycler"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/period_spinner" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -13,7 +13,7 @@ data class DatingEvent (
     var dt: Long = Date().time,
     var userId: String = "",
     var eventText: String = "",
-    var eventType: String = EventType.Date.name,
+    var eventType: String = "Date",
     var eventImageId: String = ""
 ){
     var dt_txt = getFormattedDate()

@@ -13,12 +13,12 @@
         <item name="backgroundColor">@color/colorMainBackground</item>
     </style>
 
-    <style name="OtherText">
+    <style name="GrayText">
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/colorTextAccent</item>
     </style>
 
-    <style name="LocationText" parent="OtherText">
+    <style name="LocationText" parent="GrayText">
         <item name="android:textStyle">italic</item>
         <item name="android:hint">@string/location_hint</item>
     </style>
@@ -29,7 +29,7 @@
         <item name="android:textCursorDrawable">@drawable/cursor</item>
     </style>
 
-    <style name="SearchView" parent="OtherText">
+    <style name="SearchView" parent="GrayText">
         <item name="searchIcon">@drawable/ic_search</item>
         <item name="height">50dp</item>
         <item name="android:queryBackground">@null</item>
@@ -48,13 +48,21 @@
         <item name="android:itemBackground">@drawable/ic_border_active</item>
     </style>
 
+    <style name="MiddleText">
+        <item name="android:textSize">10sp</item>
+    </style>
+
     <style name="Spinner">
         <item name="overlapAnchor">true</item>
         <item name="background">@drawable/ic_drop_down</item>
     </style>
     
-    <style name="WhiteText" parent="OtherText">
+    <style name="WhiteText" parent="GrayText">
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TitleText" parent="WhiteText">
+        <item name="android:textSize">24sp</item>
     </style>
     
     <style name="Title">
@@ -66,6 +74,30 @@
     <style name="SweetProgressBarHorisontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/sweet_progress_bar</item>
         <item name="background">@drawable/border_13_stroke_padding</item>
+    </style>
+
+    <style name="TextCounter" parent="MiddleText">
+        <item name="background">@drawable/border_10_stroke</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_width">50dp</item>
+    </style>
+
+    <style name="TextInput">
+        <item name="background">@drawable/border_10</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">15dp</item>
+    </style>
+
+    <style name="Button">
+        <item name="background">@drawable/border_10</item>
+        <item name="backgroundTint">@color/colorAccent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
     </style>
 
 </resources>

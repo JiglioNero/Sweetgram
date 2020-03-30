@@ -25,8 +25,8 @@ object BindingAdapter: DataBindingComponent {
     @JvmStatic
     @BindingAdapter(value = ["app:iconId"], requireAll = true)
     fun loadImage(view: View, iconId: String?) {
-        Log.i("Picasso", "Load file: $iconId")
         if(!iconId.isNullOrBlank()) {
+            Log.i("Picasso", "Load file: $iconId")
             when (view){
                 is ImageView ->  Picasso.get().load(File(iconId)).into(view)
                 else -> {

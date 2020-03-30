@@ -7,4 +7,26 @@
     <string name="empty_message">Add a moment there</string>
     <string name="moment_hint">Moment...</string>
     <string name="location_hint">Input your location</string>
+    <string name="stat_until_next_anniversary">Until the next anniversary:</string>
+    <string name="stat_time_together">You are together:</string>
+    <string name="stat_days">days</string>
+    <string name="stat_years">years</string>
+    <string name="stat_months">months</string>
+    <string name="stat_weeks">weeks</string>
+    <string name="stat_day">day</string>
+    <string name="stat_year">year</string>
+    <string name="stat_month">month</string>
+    <string name="stat_week">week</string>
+    <string name="stat_calculate_by">Statistic by</string>
+    <string name="title_activity_login">Log in</string>
+    <string name="username_label">"Your name"</string>
+    <string name="lover_username_label">"Lovers name"</string>
+    <string name="relationship_start_label">"Relationship start date"</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_button">"Join"</string>
+    <string name="add_photo_button_label">"Add photos"</string>
+    <string name="lover_username_example">"Alice"</string>
+    <string name="username_example">"Rick"</string>
+    <string name="date_example">"30.03.2020"</string>
+    <string name="config_file_name" translatable="false">config</string>
 </resources>

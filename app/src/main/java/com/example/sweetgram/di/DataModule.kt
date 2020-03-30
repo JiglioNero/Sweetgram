@@ -13,11 +13,51 @@ import javax.inject.Singleton
 class DataModule{
     @Singleton
     @Provides
-    fun getDatabase(context: Context): Database {
+    fun getDatabase(context: Context/*, onPreCreateCallback: RoomDatabase.Callback*/): Database {
         return Room.databaseBuilder(context, Database::class.java, "Sweetgram-Database")
             .allowMainThreadQueries()
+            /*.addCallback(onPreCreateCallback)*/
             .build()
     }
+
+   /* @Provides
+    fun getOnCreateDatabaseCallback(): RoomDatabase.Callback{
+        return object: RoomDatabase.Callback() {
+            override fun onCreate(db: SupportSQLiteDatabase) {
+                super.onCreate(db)
+                val valuesEventType = arrayListOf<ContentValues>(
+                    ContentValues().apply { put("name", "Date") },
+                    ContentValues().apply { put("name", "Theather") },
+                    ContentValues().apply { put("name", "Flowers") },
+                    ContentValues().apply { put("name", "Cinema") },
+                    ContentValues().apply { put("name", "Surprise") }
+                )
+                valuesEventType.forEach {
+                    db.insert("EventType", OnConflictStrategy.REPLACE, it)
+                }
+
+                val ids = arrayListOf<Long>()
+                val valuesAppUser = arrayListOf<ContentValues>(
+                    ContentValues().apply { put("username", "Mikhail") },
+                    ContentValues().apply { put("username", "Alesya") }
+                )
+                valuesAppUser.forEach {
+                    ids.add(db.insert("Lover", OnConflictStrategy.ABORT, it))
+                }
+
+                val valuesRelationship = arrayListOf<ContentValues>(
+                    ContentValues().apply {
+                        put("lover1Id", ids[0])
+                        put("lover2Id", ids[1])
+                        put("dt", 1544383607000)
+                    }
+                )
+                valuesRelationship.forEach {
+                    db.insert("Relationship", OnConflictStrategy.ABORT, it)
+                }
+            }
+        }
+    }*/
 
     @Singleton
     @Provides

@@ -17,7 +17,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.sweetgram.R
 import com.example.sweetgram.data.entitys.DatingEvent
-import com.example.sweetgram.data.entitys.EventType
 import com.example.sweetgram.databinding.FragmentEventRedactorBinding
 import com.example.sweetgram.ui.activities.ImagePickerActivity
 import pl.aprilapps.easyphotopicker.EasyImage
@@ -66,7 +65,7 @@ class EventRedactorFragment : Fragment() {
 
         view?.let {v ->
             val spinner = v.findViewById<Spinner>(R.id.type_event)
-            val adapter = ArrayAdapter<String>(context!!, R.layout.support_simple_spinner_dropdown_item, EventType.values().map { it.name })
+            val adapter = ArrayAdapter<String>(context!!, R.layout.support_simple_spinner_dropdown_item, viewModel.eventTypes.map { it.name })
             spinner.adapter = adapter
 
             val saveButton = v.findViewById<ImageView>(R.id.save_button)

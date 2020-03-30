@@ -90,7 +90,7 @@
 
                             <EditText
                                 android:id="@+id/event_text"
-                                style="@style/OtherText"
+                                style="@style/GrayText"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"

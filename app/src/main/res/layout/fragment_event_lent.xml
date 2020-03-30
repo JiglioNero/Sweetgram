@@ -31,7 +31,7 @@
             android:id="@+id/recycler_event_lenta"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:layoutAnimation="@anim/recycler_anim"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +56,7 @@
 
         <TextView
             android:id="@+id/emptyMessage"
-            style="@style/OtherText"
+            style="@style/GrayText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/empty_message"
