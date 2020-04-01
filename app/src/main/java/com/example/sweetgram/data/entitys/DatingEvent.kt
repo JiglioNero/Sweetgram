@@ -11,16 +11,12 @@ data class DatingEvent (
     val id: Long = 0,
     var location: String =  "",
     var dt: Long = Date().time,
-    var userId: Long = 0,
+    var relId: Long = 0,
     var eventText: String = "",
     var eventType: String = "Date",
     var eventImageId: String = ""
 ){
     var dt_txt = getFormattedDate()
-
-    fun getUserIconId(): String{
-        return ""
-    }
 
     fun getFormattedDate(): String{
         return dateFormatter.format(Date(dt))

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="profileVM"
+            type="com.example.sweetgram.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.profile.ProfileFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/relationship_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_image"
+            android:visibility="visible"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp"
+            app:iconId="@{profileVM.relationship.relIconId}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lover1_name"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{profileVM.lover1.username}"
+            app:layout_constraintStart_toEndOf="@+id/relationship_icon"
+            app:layout_constraintTop_toTopOf="@+id/relationship_icon" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_adding"
+            app:layout_constraintBottom_toBottomOf="@+id/lover1_name"
+            app:layout_constraintStart_toEndOf="@+id/lover1_name"
+            app:layout_constraintTop_toTopOf="@+id/lover1_name" />
+
+        <TextView
+            android:id="@+id/lover2_name"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{profileVM.lover2.username}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+        <TextView
+            android:id="@+id/textView10"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="="
+            app:layout_constraintBottom_toBottomOf="@+id/lover2_name"
+            app:layout_constraintStart_toEndOf="@+id/lover2_name"
+            app:layout_constraintTop_toTopOf="@+id/lover2_name" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_filled_heart"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/relationship_start_date"
+            style="@style/WhiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{profileVM.relationship.formattedDate}"
+            app:layout_constraintStart_toEndOf="@+id/relationship_icon"
+            app:layout_constraintTop_toBottomOf="@+id/lover1_name" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/GrayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/сontent_in_development"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

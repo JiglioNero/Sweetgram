@@ -11,8 +11,8 @@ interface EventTypeDao {
     @Query("SELECT * FROM EventType")
     fun getAll(): List<EventType>
 
-    @Query("SELECT COUNT(*) FROM DatingEvent WHERE DatingEvent.eventType == :eventName AND :currentDt - DatingEvent.dt <= :period")
-    fun getCountEventsByPeriod(eventName: String, period: Long, currentDt: Long): Int
+    @Query("SELECT COUNT(*) FROM DatingEvent WHERE DatingEvent.eventType == :eventName AND :currentDt - DatingEvent.dt <= :period AND DatingEvent.relId == :relId")
+    fun getCountEventsByPeriod(relId: Long, eventName: String, period: Long, currentDt: Long): Int
 
     @Insert
     fun addType(type: EventType)

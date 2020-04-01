@@ -1,6 +1,7 @@
 package com.example.sweetgram.ui.activities.login
 
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
@@ -51,7 +52,9 @@ class LoginViewModel: ViewModel() {
             loversUsername.get() != null &&
             relationshipStartDate.get() != null &&
             username.get()!!.length > 3 &&
-            loversUsername.get()!!.length > 3
+            loversUsername.get()!!.length > 3 &&
+            username.get()!!.length < 15 &&
+            loversUsername.get()!!.length < 15
         ) {
             try {
             val loverTry1 = Lover(username = username.get()!!)
@@ -67,9 +70,11 @@ class LoginViewModel: ViewModel() {
             var id2: Long = -1
             var relationshipId: Long = -1
 
-                id1 = lover1?.id ?: dataNode.saveLover(loverTry1)
+                id1 = lover1?.
+                id ?: dataNode.saveLover(loverTry1)
 
                 id2 = lover2?.id ?: dataNode.saveLover(loverTry2)
+
 
                 var relationship = dataNode.getRelationshipByLoversIds(id1, id2)
 
@@ -83,6 +88,8 @@ class LoginViewModel: ViewModel() {
                     loginActivity.resources.getString(R.string.login_success_toast), Toast.LENGTH_SHORT
                 )
                 toast.show()
+
+                Log.i("Login", "lover1 = ${lover1?.username} lover2 = ${lover2?.username} relationship = ${relationshipId} cred1 = ${cred1.username} cred2 = ${cred2.username}")
 
                 val intent = Intent(loginActivity, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)

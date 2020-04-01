@@ -19,7 +19,6 @@ import com.example.sweetgram.R
 import com.example.sweetgram.data.entitys.DatingEvent
 import com.example.sweetgram.databinding.FragmentEventRedactorBinding
 import com.example.sweetgram.ui.activities.ImagePickerActivity
-import com.example.sweetgram.ui.activities.MainActivity
 import pl.aprilapps.easyphotopicker.EasyImage
 
 
@@ -44,11 +43,13 @@ class EventRedactorFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         //super.onActivityResult(requestCode, resultCode, data)
-        val path = data!!.extras!!.getString(ImagePickerActivity.IMAGE_PATH_KEY)!!
-        Log.e("onActivityResult", "Path = $path")
-        viewModel.datingEventField.get()?.eventImageId = path
-        Log.e("datingEvent", "value = ${viewModel.datingEventField.get()}")
-        viewModel.datingEventField.notifyChange()
+        data?.extras?.getString(ImagePickerActivity.IMAGE_PATH_KEY)?.let {
+            val path = data.extras!!.getString(ImagePickerActivity.IMAGE_PATH_KEY)!!
+            Log.e("onActivityResult", "Path = $path")
+            viewModel.datingEventField.get()?.eventImageId = path
+            Log.e("datingEvent", "value = ${viewModel.datingEventField.get()}")
+            viewModel.datingEventField.notifyChange()
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -56,7 +57,8 @@ class EventRedactorFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(EventRedactorViewModel::class.java)
 
-        var event = DatingEvent(userId = MainActivity.user.id)
+        Log.e("REDACT", "relationshipid = ${viewModel.relationship.id}")
+        var event = DatingEvent(relId = viewModel.relationship.id)
         if (arguments?.containsKey("dating_event_id") != null && arguments?.containsKey("dating_event_id")!!){
             val id = arguments!!.getLong("dating_event_id")
             event = viewModel.dataNode.getDatingEventById(id)
@@ -72,6 +74,7 @@ class EventRedactorFragment : Fragment() {
             val saveButton = v.findViewById<ImageView>(R.id.save_button)
             saveButton.setOnClickListener {
                 viewModel.datingEventField.get()?.eventType = spinner.selectedItem as String
+                Log.e("REDACT", "datingEvent = ${viewModel.datingEventField.get()}")
                 viewModel.dataNode.saveDatingEvent(viewModel.datingEventField.get()!!)
 
                 findNavController().navigate(R.id.action_add_event_to_event_lent)

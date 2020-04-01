@@ -104,7 +104,7 @@
                                 android:gravity="start|top"
                                 android:hint="@string/moment_hint"
                                 android:inputType="textMultiLine"
-                                android:minHeight="200dp"
+                                android:minHeight="300dp"
                                 android:text="@={redactVM.datingEventField.eventText}"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -160,13 +160,13 @@
 
                         <ImageView
                             android:id="@+id/delete_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="11dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_delete" />
+                            app:srcCompat="@drawable/ic_close" />
 
                         <ImageView
                             android:id="@+id/save_button"

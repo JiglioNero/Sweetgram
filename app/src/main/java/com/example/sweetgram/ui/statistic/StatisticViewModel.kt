@@ -34,7 +34,7 @@ class StatisticViewModel : ViewModel() {
     }
 
     fun setStatisticByPeriod(periodId: Int){
-        adapter.listOfPairs = ArrayList(dataNode.getCountEventsByPeriod(Periods.map[periodId]!!, Date().time))
+        adapter.listOfPairs = ArrayList(dataNode.getCountEventsByPeriod(relationship.id, Periods.map[periodId]!!, Date().time))
         adapter.notifyDataSetChanged()
     }
 

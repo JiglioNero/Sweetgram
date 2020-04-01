@@ -5,11 +5,13 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingComponent
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
+import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
 
 object BindingAdapter: DataBindingComponent {
@@ -28,7 +30,8 @@ object BindingAdapter: DataBindingComponent {
         if(!iconId.isNullOrBlank()) {
             Log.i("Picasso", "Load file: $iconId")
             when (view){
-                is ImageView ->  Picasso.get().load(File(iconId)).into(view)
+                is ImageView -> Picasso.get().load(File(iconId)).into(view)
+                is CircleImageView -> Picasso.get().load(File(iconId)).into(view)
                 else -> {
                     view.tag = object: Target{
                         override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
@@ -46,7 +49,11 @@ object BindingAdapter: DataBindingComponent {
                         }
                     }
                     Picasso.get().load(File(iconId)).into(view.tag as Target)
+
                 }
+            }
+            if (view.height == 1 && view.width == 1){
+                view.layoutParams = ViewGroup.LayoutParams(40, 40)
             }
         }
     }

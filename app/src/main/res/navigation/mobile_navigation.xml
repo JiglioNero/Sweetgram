@@ -21,7 +21,7 @@
         android:id="@+id/profile"
         android:name="com.example.sweetgram.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/statistic"

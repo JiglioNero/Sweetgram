@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import pl.aprilapps.easyphotopicker.ChooserType
 import pl.aprilapps.easyphotopicker.EasyImage
 import pl.aprilapps.easyphotopicker.MediaFile
 import pl.aprilapps.easyphotopicker.MediaSource
@@ -24,7 +25,7 @@ class ImagePickerActivity: AppCompatActivity() {
                 // Will appear as a system chooser title, DEFAULT empty string
                 //.setChooserTitle("Pick media")
                 // Will tell chooser that it should show documents or gallery apps
-                //.setChooserType(ChooserType.CAMERA_AND_DOCUMENTS)  you can use this or the one below
+                .setChooserType(ChooserType.CAMERA_AND_DOCUMENTS)
                 //.setChooserType(ChooserType.CAMERA_AND_GALLERY)
                 // Setting to true will cause taken pictures to show up in the device gallery, DEFAULT false
                 .setCopyImagesToPublicGalleryFolder(true) // Sets the name for images stored if setCopyImagesToPublicGalleryFolder = true

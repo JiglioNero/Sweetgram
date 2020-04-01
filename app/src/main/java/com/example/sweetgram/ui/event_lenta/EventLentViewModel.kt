@@ -1,6 +1,7 @@
 package com.example.sweetgram.ui.event_lenta
 
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -30,6 +31,10 @@ class EventLentViewModel : ViewModel() {
         datingEventAdapter.eventLentViewModel = this
     }
 
+    fun getRelationshipIconId(relId: Long): String{
+        return lentaDataNode.dataNode.getRelationshipById(relId).relIconId
+    }
+
     fun deleteEventById(id: Long){
         lentaDataNode.dataNode.deleteDatingEvent(id)
     }
@@ -37,14 +42,14 @@ class EventLentViewModel : ViewModel() {
     fun redactEventById(id: Long){
         val bundleData = Bundle()
         bundleData.putSerializable("dating_event_id", id)
+        Log.e("GOTOREDACT", "relationshipid = ${id}")
         findNavController(fragment).navigate(R.id.action_navigation_home_to_eventRedactorFragment, bundleData)
     }
 
     fun initObserveResponse(lifeCycleOwner: LifecycleOwner) {
-        lentaDataNode.initObserveResponse(lifeCycleOwner, pagedListLiveData)
-
         pagedListLiveData.observe(lifeCycleOwner) {
             datingEventAdapter.submitList(pagedListLiveData.value)
         }
+        lentaDataNode.initObserveResponse(lifeCycleOwner, pagedListLiveData)
     }
 }

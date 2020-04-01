@@ -32,4 +32,6 @@
     <string name="fill_all_inputs_toast">Please fill all inputs. P.S. names should be longer then 3)</string>
     <string name="smth_failed_toast">Sorry, something failed</string>
     <string name="login_success_toast">Login success</string>
+    <string name="сontent_in_development">Content in development</string>
+    <string name="base_moment_text">It was amazing!</string>
 </resources>

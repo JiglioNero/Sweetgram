@@ -7,7 +7,7 @@ class DataNode(
     private val database: Database
 ) {
 
-    fun getDatingEventsByUserId(id: Long, filter: String?): LiveData<List<DatingEvent>>{
+    fun getDatingEventsByRelationshipId(id: Long, filter: String?): LiveData<List<DatingEvent>>{
         return if (filter.isNullOrBlank())
             database.datingEventDao().getByUserId(id)
         else
@@ -33,12 +33,16 @@ class DataNode(
         database.relationshipDao().delete(relationship)
     }
 
+    fun updateRelationship(relationship: Relationship){
+        database.relationshipDao().update(relationship)
+    }
+
     fun saveRelationship(relationship: Relationship): Long{
         return database.relationshipDao().insert(relationship)
     }
 
-    fun getLoverById(id: Long){
-        database.loverDao().getById(id)
+    fun getLoverById(id: Long): Lover{
+        return database.loverDao().getById(id)
     }
 
     fun getLoverByCredentials(credentials: LoverCredentials): Lover?{
@@ -84,10 +88,10 @@ class DataNode(
         return database.eventTypeDao().addType(type)
     }
 
-    fun getCountEventsByPeriod(period: Long, currentDt: Long): List<Pair<EventType, Int>>{
+    fun getCountEventsByPeriod(relId: Long, period: Long, currentDt: Long): List<Pair<EventType, Int>>{
         val pairsList = arrayListOf<Pair<EventType, Int>>()
         database.eventTypeDao().getAll().forEach {
-            pairsList.add(Pair(it, database.eventTypeDao().getCountEventsByPeriod(it.name, period, currentDt)))
+            pairsList.add(Pair(it, database.eventTypeDao().getCountEventsByPeriod(relId, it.name, period, currentDt)))
         }
         return pairsList
     }

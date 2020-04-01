@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -7,8 +8,7 @@
             type="com.example.sweetgram.ui.activities.login.LoginViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -135,17 +135,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <TextView
-            android:id="@+id/add_photos_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/ic_image"
-            android:text="@string/add_photo_button_label"
-            android:textColor="@color/colorTextAccent"
-            app:layout_constraintStart_toStartOf="@+id/relationship_date"
-            app:layout_constraintTop_toBottomOf="@+id/relationship_date" />
-
         <Button
             android:id="@+id/button"
             style="@style/Button"
@@ -156,13 +145,11 @@
             android:layout_marginBottom="24dp"
             android:background="@drawable/border_10"
             android:backgroundTint="@color/colorAccent"
-            android:text="@string/login_button"
             android:onClick="@{() -> loginVM.tryToLoginByInput()}"
+            android:text="@string/login_button"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_photos_button"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

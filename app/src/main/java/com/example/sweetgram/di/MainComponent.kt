@@ -6,6 +6,8 @@ import com.example.sweetgram.ui.activities.login.LoginActivity
 import com.example.sweetgram.ui.activities.login.LoginViewModel
 import com.example.sweetgram.ui.event_lenta.EventLentViewModel
 import com.example.sweetgram.ui.event_redactor.EventRedactorViewModel
+import com.example.sweetgram.ui.profile.ProfileViewModel
+import com.example.sweetgram.ui.profile.photo_gallery.PhotoGalleryViewModel
 import com.example.sweetgram.ui.statistic.StatisticViewModel
 import dagger.Component
 import jiglionero.android.app.putonpompom.di.DataModule
@@ -23,6 +25,8 @@ interface MainComponent {
     fun inject(obj: SweetgramApplication)
     fun inject(obj: StatisticViewModel)
     fun inject(obj: EventRedactorViewModel)
+    fun inject(obj: ProfileViewModel)
+    fun inject(obj: PhotoGalleryViewModel)
     fun inject(obj: LoginViewModel)
     fun inject(obj: LoginActivity)
     fun inject(obj: MainActivity)

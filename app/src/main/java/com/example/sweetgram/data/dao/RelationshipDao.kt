@@ -23,6 +23,9 @@ interface RelationshipDao{
     @Insert(onConflict = OnConflictStrategy.ABORT)
     fun insert(entity: Relationship): Long
 
+    @Update
+    fun update(entity: Relationship)
+
     @Delete
     fun delete(entity: Relationship)
 }

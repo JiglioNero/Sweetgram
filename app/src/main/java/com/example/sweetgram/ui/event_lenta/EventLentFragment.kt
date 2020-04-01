@@ -29,6 +29,14 @@ class EventLentFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_event_lent, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        view?.let{
+            it.findViewById<RecyclerView>(R.id.recycler_event_lenta).adapter?.notifyDataSetChanged()
+        }
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
